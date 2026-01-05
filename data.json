@@ -8,57 +8,132 @@
     "generatedBy": "Hostel Manager System"
   },
   "summary": {
-    "totalStudents": 1,
-    "totalTransactions": 8,
-    "totalIncome": 0,
-    "totalExpense": 64530,
-    "netBalance": -64530,
-    "incomeRecords": 0,
-    "expenseRecords": 8
+    "totalStudents": 3,
+    "totalTransactions": 34,
+    "totalIncome": 15000,
+    "totalExpense": 65682,
+    "netBalance": -50682,
+    "incomeRecords": 1,
+    "expenseRecords": 11,
+    "mealRecords": 22
   },
   "students": [
     {
-      "id": 1767116679435,
+      "id": 1,
       "name": "Basheer Ali",
-      "phone": "0323-2596522",
-      "email": "",
-      "room": "FR -01",
-      "emergencyContact": "",
-      "monthlyFee": 14500,
-      "notes": "",
+      "phone": "0300-1234567",
+      "email": "basheer@example.com",
+      "room": "FR-01",
+      "emergencyContact": "Father: 0300-7654321",
+      "monthlyFee": 15000,
+      "notes": "Pre-med student",
       "image": "base64_encoded_image",
-      "createdAt": "2025-12-30T17:44:39.435Z",
+      "createdAt": "2026-01-05T05:17:02.949Z",
       "feeStatus": {
         "currentMonth": {
           "month": "2026-01",
-          "status": "not_paid",
-          "amount": 14500,
-          "paid": false
+          "status": "paid",
+          "amount": 15000,
+          "paid": true
         },
         "previousMonth": {
           "month": "2025-12",
           "status": "pending",
-          "amount": 14500,
+          "amount": 15000,
           "paid": false
         },
         "detailed": {
+          "2026-01": {
+            "paid": true,
+            "amount": 15000,
+            "date": "2026-01-05T10:00:00",
+            "status": "paid"
+          },
           "2025-12": {
             "paid": false,
             "amount": 0,
             "date": null,
             "status": "pending"
-          },
-          "2025-11": {
-            "paid": false,
-            "amount": 0,
-            "date": null,
-            "status": "pending"
-          },
+          }
+        }
+      }
+    },
+    {
+      "id": 2,
+      "name": "Zulfiqar Ali",
+      "phone": "0312-3456789",
+      "email": "zulfiqar@example.com",
+      "room": "FR-01",
+      "emergencyContact": "Brother: 0312-9876543",
+      "monthlyFee": 15000,
+      "notes": "Engineering student",
+      "image": "base64_encoded_image",
+      "createdAt": "2026-01-05T05:17:02.949Z",
+      "feeStatus": {
+        "currentMonth": {
+          "month": "2026-01",
+          "status": "not_paid",
+          "amount": 15000,
+          "paid": false
+        },
+        "previousMonth": {
+          "month": "2025-12",
+          "status": "pending",
+          "amount": 15000,
+          "paid": false
+        },
+        "detailed": {
           "2026-01": {
             "paid": false,
             "amount": 0,
             "date": null,
             "status": "not_paid"
+          },
+          "2025-12": {
+            "paid": false,
+            "amount": 0,
+            "date": null,
+            "status": "pending"
+          }
+        }
+      }
+    },
+    {
+      "id": 3,
+      "name": "Abdul Qadir",
+      "phone": "0333-4567890",
+      "email": "abdul@example.com",
+      "room": "GF-01",
+      "emergencyContact": "Uncle: 0333-0987654",
+      "monthlyFee": 15000,
+      "notes": "First year student",
+      "image": "base64_encoded_image",
+      "createdAt": "2026-01-05T05:17:02.949Z",
+      "feeStatus": {
+        "currentMonth": {
+          "month": "2026-01",
+          "status": "not_paid",
+          "amount": 15000,
+          "paid": false
+        },
+        "previousMonth": {
+          "month": "2025-12",
+          "status": "pending",
+          "amount": 15000,
+          "paid": false
+        },
+        "detailed": {
+          "2026-01": {
+            "paid": false,
+            "amount": 0,
+            "date": null,
+            "status": "not_paid"
+          },
+          "2025-12": {
+            "paid": false,
+            "amount": 0,
+            "date": null,
+            "status": "pending"
           }
         }
       }
@@ -66,92 +141,779 @@
   ],
   "transactions": [
     {
-      "id": 1767467464067,
-      "type": "expense",
-      "amount": 1530,
-      "description": "Tomato 450, Patata 270, Basar 250, Thom/Adrak 200, Thom/Dhana 70, Mirch 50, + Addons",
+      "id": 1767601007335,
+      "type": "meal",
+      "amount": 180,
+      "description": "Meal expense",
       "category": "Food",
-      "date": "2026-01-03",
+      "date": "2026-01-05T13:15",
       "studentName": "",
       "receivedBy": "",
-      "receivedBySignUrl": ""
+      "receivedBySignUrl": "",
+      "mealType": "breakfast",
+      "mealItems": []
     },
     {
-      "id": 1767467318495,
-      "type": "expense",
-      "amount": 1000,
-      "description": "To Sweeper For Sweeping Old Hostel",
-      "category": "Staff Salary",
-      "date": "2026-01-02",
-      "studentName": "",
-      "receivedBy": "",
-      "receivedBySignUrl": ""
-    },
-    {
-      "id": 1767467262097,
-      "type": "expense",
-      "amount": 13000,
-      "description": "Sweeper Salary",
-      "category": "Staff Salary",
-      "date": "2026-01-02",
-      "studentName": "",
-      "receivedBy": "",
-      "receivedBySignUrl": ""
-    },
-    {
-      "id": 1767467224538,
-      "type": "expense",
-      "amount": 21000,
-      "description": "Cook Salary",
-      "category": "Staff Salary",
-      "date": "2026-01-02",
-      "studentName": "",
-      "receivedBy": "",
-      "receivedBySignUrl": ""
-    },
-    {
-      "id": 1767467186061,
-      "type": "expense",
-      "amount": 10000,
-      "description": "Milk Advance",
+      "id": 1767600934921,
+      "type": "meal",
+      "amount": 1514,
+      "description": "Daily meals expense",
       "category": "Food",
-      "date": "2026-01-02",
+      "date": "2026-01-05T08:00:00",
+      "mealType": "breakfast",
+      "mealItems": [
+        {
+          "name": "Eggs",
+          "amount": 400
+        },
+        {
+          "name": "Bread",
+          "amount": 300
+        },
+        {
+          "name": "Milk",
+          "amount": 200
+        },
+        {
+          "name": "Butter",
+          "amount": 150
+        }
+      ],
       "studentName": "",
       "receivedBy": "",
       "receivedBySignUrl": ""
     },
     {
-      "id": 1767467156928,
+      "id": 1767600934922,
       "type": "expense",
-      "amount": 10000,
-      "description": "Chicken Advance",
+      "amount": 3094,
+      "description": "Vegetables and groceries",
       "category": "Food",
-      "date": "2026-01-02",
+      "date": "2026-01-05T10:00:00",
       "studentName": "",
       "receivedBy": "",
       "receivedBySignUrl": ""
     },
     {
-      "id": 1767467133240,
-      "type": "expense",
-      "amount": 4200,
-      "description": "Plumber (For Hot, Fresh water Supply)",
-      "category": "Others",
-      "date": "2026-01-02",
+      "id": 1767600934923,
+      "type": "meal",
+      "amount": 2280,
+      "description": "Lunch for students",
+      "category": "Food",
+      "date": "2026-01-05T13:00:00",
+      "mealType": "lunch",
+      "mealItems": [
+        {
+          "name": "Rice",
+          "amount": 500
+        },
+        {
+          "name": "Chicken",
+          "amount": 800
+        },
+        {
+          "name": "Vegetables",
+          "amount": 400
+        },
+        {
+          "name": "Spices",
+          "amount": 150
+        }
+      ],
       "studentName": "",
       "receivedBy": "",
       "receivedBySignUrl": ""
     },
     {
-      "id": 1767467066312,
+      "id": 1767600934924,
+      "type": "meal",
+      "amount": 1932,
+      "description": "Dinner for students",
+      "category": "Food",
+      "date": "2026-01-05T20:00:00",
+      "mealType": "dinner",
+      "mealItems": [
+        {
+          "name": "Roti",
+          "amount": 300
+        },
+        {
+          "name": "Daal",
+          "amount": 400
+        },
+        {
+          "name": "Sabzi",
+          "amount": 600
+        },
+        {
+          "name": "Salad",
+          "amount": 150
+        }
+      ],
+      "studentName": "",
+      "receivedBy": "",
+      "receivedBySignUrl": ""
+    },
+    {
+      "id": 1767600934925,
       "type": "expense",
-      "amount": 3800,
-      "description": "Rice, Oil etc mixed",
+      "amount": 625,
+      "description": "Miscellaneous expenses",
       "category": "Daily Expenses",
-      "date": "2026-01-01",
+      "date": "2026-01-05T15:00:00",
       "studentName": "",
       "receivedBy": "",
       "receivedBySignUrl": ""
+    },
+    {
+      "id": 1767600935921,
+      "type": "meal",
+      "amount": 1523,
+      "description": "Daily meals expense",
+      "category": "Food",
+      "date": "2026-01-04T08:00:00",
+      "mealType": "breakfast",
+      "mealItems": [
+        {
+          "name": "Eggs",
+          "amount": 400
+        },
+        {
+          "name": "Bread",
+          "amount": 300
+        },
+        {
+          "name": "Milk",
+          "amount": 200
+        },
+        {
+          "name": "Butter",
+          "amount": 150
+        }
+      ],
+      "studentName": "",
+      "receivedBy": "",
+      "receivedBySignUrl": ""
+    },
+    {
+      "id": 1767600935922,
+      "type": "expense",
+      "amount": 2741,
+      "description": "Vegetables and groceries",
+      "category": "Food",
+      "date": "2026-01-04T10:00:00",
+      "studentName": "",
+      "receivedBy": "",
+      "receivedBySignUrl": ""
+    },
+    {
+      "id": 1767600935923,
+      "type": "meal",
+      "amount": 2143,
+      "description": "Lunch for students",
+      "category": "Food",
+      "date": "2026-01-04T13:00:00",
+      "mealType": "lunch",
+      "mealItems": [
+        {
+          "name": "Rice",
+          "amount": 500
+        },
+        {
+          "name": "Chicken",
+          "amount": 800
+        },
+        {
+          "name": "Vegetables",
+          "amount": 400
+        },
+        {
+          "name": "Spices",
+          "amount": 150
+        }
+      ],
+      "studentName": "",
+      "receivedBy": "",
+      "receivedBySignUrl": ""
+    },
+    {
+      "id": 1767600935924,
+      "type": "meal",
+      "amount": 2080,
+      "description": "Dinner for students",
+      "category": "Food",
+      "date": "2026-01-04T20:00:00",
+      "mealType": "dinner",
+      "mealItems": [
+        {
+          "name": "Roti",
+          "amount": 300
+        },
+        {
+          "name": "Daal",
+          "amount": 400
+        },
+        {
+          "name": "Sabzi",
+          "amount": 600
+        },
+        {
+          "name": "Salad",
+          "amount": 150
+        }
+      ],
+      "studentName": "",
+      "receivedBy": "",
+      "receivedBySignUrl": ""
+    },
+    {
+      "id": 1767600936921,
+      "type": "meal",
+      "amount": 1673,
+      "description": "Daily meals expense",
+      "category": "Food",
+      "date": "2026-01-03T08:00:00",
+      "mealType": "breakfast",
+      "mealItems": [
+        {
+          "name": "Eggs",
+          "amount": 400
+        },
+        {
+          "name": "Bread",
+          "amount": 300
+        },
+        {
+          "name": "Milk",
+          "amount": 200
+        },
+        {
+          "name": "Butter",
+          "amount": 150
+        }
+      ],
+      "studentName": "",
+      "receivedBy": "",
+      "receivedBySignUrl": ""
+    },
+    {
+      "id": 1767600936922,
+      "type": "expense",
+      "amount": 2625,
+      "description": "Vegetables and groceries",
+      "category": "Food",
+      "date": "2026-01-03T10:00:00",
+      "studentName": "",
+      "receivedBy": "",
+      "receivedBySignUrl": ""
+    },
+    {
+      "id": 1767600936923,
+      "type": "meal",
+      "amount": 2175,
+      "description": "Lunch for students",
+      "category": "Food",
+      "date": "2026-01-03T13:00:00",
+      "mealType": "lunch",
+      "mealItems": [
+        {
+          "name": "Rice",
+          "amount": 500
+        },
+        {
+          "name": "Chicken",
+          "amount": 800
+        },
+        {
+          "name": "Vegetables",
+          "amount": 400
+        },
+        {
+          "name": "Spices",
+          "amount": 150
+        }
+      ],
+      "studentName": "",
+      "receivedBy": "",
+      "receivedBySignUrl": ""
+    },
+    {
+      "id": 1767600936924,
+      "type": "meal",
+      "amount": 2042,
+      "description": "Dinner for students",
+      "category": "Food",
+      "date": "2026-01-03T20:00:00",
+      "mealType": "dinner",
+      "mealItems": [
+        {
+          "name": "Roti",
+          "amount": 300
+        },
+        {
+          "name": "Daal",
+          "amount": 400
+        },
+        {
+          "name": "Sabzi",
+          "amount": 600
+        },
+        {
+          "name": "Salad",
+          "amount": 150
+        }
+      ],
+      "studentName": "",
+      "receivedBy": "",
+      "receivedBySignUrl": ""
+    },
+    {
+      "id": 1767600936925,
+      "type": "expense",
+      "amount": 550,
+      "description": "Miscellaneous expenses",
+      "category": "Daily Expenses",
+      "date": "2026-01-03T15:00:00",
+      "studentName": "",
+      "receivedBy": "",
+      "receivedBySignUrl": ""
+    },
+    {
+      "id": 1767600937921,
+      "type": "meal",
+      "amount": 1877,
+      "description": "Daily meals expense",
+      "category": "Food",
+      "date": "2026-01-02T08:00:00",
+      "mealType": "breakfast",
+      "mealItems": [
+        {
+          "name": "Eggs",
+          "amount": 400
+        },
+        {
+          "name": "Bread",
+          "amount": 300
+        },
+        {
+          "name": "Milk",
+          "amount": 200
+        },
+        {
+          "name": "Butter",
+          "amount": 150
+        }
+      ],
+      "studentName": "",
+      "receivedBy": "",
+      "receivedBySignUrl": ""
+    },
+    {
+      "id": 1767600937922,
+      "type": "expense",
+      "amount": 2624,
+      "description": "Vegetables and groceries",
+      "category": "Food",
+      "date": "2026-01-02T10:00:00",
+      "studentName": "",
+      "receivedBy": "",
+      "receivedBySignUrl": ""
+    },
+    {
+      "id": 1767600937923,
+      "type": "meal",
+      "amount": 2281,
+      "description": "Lunch for students",
+      "category": "Food",
+      "date": "2026-01-02T13:00:00",
+      "mealType": "lunch",
+      "mealItems": [
+        {
+          "name": "Rice",
+          "amount": 500
+        },
+        {
+          "name": "Chicken",
+          "amount": 800
+        },
+        {
+          "name": "Vegetables",
+          "amount": 400
+        },
+        {
+          "name": "Spices",
+          "amount": 150
+        }
+      ],
+      "studentName": "",
+      "receivedBy": "",
+      "receivedBySignUrl": ""
+    },
+    {
+      "id": 1767600937924,
+      "type": "meal",
+      "amount": 2225,
+      "description": "Dinner for students",
+      "category": "Food",
+      "date": "2026-01-02T20:00:00",
+      "mealType": "dinner",
+      "mealItems": [
+        {
+          "name": "Roti",
+          "amount": 300
+        },
+        {
+          "name": "Daal",
+          "amount": 400
+        },
+        {
+          "name": "Sabzi",
+          "amount": 600
+        },
+        {
+          "name": "Salad",
+          "amount": 150
+        }
+      ],
+      "studentName": "",
+      "receivedBy": "",
+      "receivedBySignUrl": ""
+    },
+    {
+      "id": 1767600938921,
+      "type": "meal",
+      "amount": 1969,
+      "description": "Daily meals expense",
+      "category": "Food",
+      "date": "2026-01-01T08:00:00",
+      "mealType": "breakfast",
+      "mealItems": [
+        {
+          "name": "Eggs",
+          "amount": 400
+        },
+        {
+          "name": "Bread",
+          "amount": 300
+        },
+        {
+          "name": "Milk",
+          "amount": 200
+        },
+        {
+          "name": "Butter",
+          "amount": 150
+        }
+      ],
+      "studentName": "",
+      "receivedBy": "",
+      "receivedBySignUrl": ""
+    },
+    {
+      "id": 1767600938922,
+      "type": "expense",
+      "amount": 2636,
+      "description": "Vegetables and groceries",
+      "category": "Food",
+      "date": "2026-01-01T10:00:00",
+      "studentName": "",
+      "receivedBy": "",
+      "receivedBySignUrl": ""
+    },
+    {
+      "id": 1767600938923,
+      "type": "meal",
+      "amount": 2406,
+      "description": "Lunch for students",
+      "category": "Food",
+      "date": "2026-01-01T13:00:00",
+      "mealType": "lunch",
+      "mealItems": [
+        {
+          "name": "Rice",
+          "amount": 500
+        },
+        {
+          "name": "Chicken",
+          "amount": 800
+        },
+        {
+          "name": "Vegetables",
+          "amount": 400
+        },
+        {
+          "name": "Spices",
+          "amount": 150
+        }
+      ],
+      "studentName": "",
+      "receivedBy": "",
+      "receivedBySignUrl": ""
+    },
+    {
+      "id": 1767600938924,
+      "type": "meal",
+      "amount": 2197,
+      "description": "Dinner for students",
+      "category": "Food",
+      "date": "2026-01-01T20:00:00",
+      "mealType": "dinner",
+      "mealItems": [
+        {
+          "name": "Roti",
+          "amount": 300
+        },
+        {
+          "name": "Daal",
+          "amount": 400
+        },
+        {
+          "name": "Sabzi",
+          "amount": 600
+        },
+        {
+          "name": "Salad",
+          "amount": 150
+        }
+      ],
+      "studentName": "",
+      "receivedBy": "",
+      "receivedBySignUrl": ""
+    },
+    {
+      "id": 1767600938925,
+      "type": "expense",
+      "amount": 717,
+      "description": "Miscellaneous expenses",
+      "category": "Daily Expenses",
+      "date": "2026-01-01T15:00:00",
+      "studentName": "",
+      "receivedBy": "",
+      "receivedBySignUrl": ""
+    },
+    {
+      "id": 1767600939921,
+      "type": "meal",
+      "amount": 1992,
+      "description": "Daily meals expense",
+      "category": "Food",
+      "date": "2025-12-31T08:00:00",
+      "mealType": "breakfast",
+      "mealItems": [
+        {
+          "name": "Eggs",
+          "amount": 400
+        },
+        {
+          "name": "Bread",
+          "amount": 300
+        },
+        {
+          "name": "Milk",
+          "amount": 200
+        },
+        {
+          "name": "Butter",
+          "amount": 150
+        }
+      ],
+      "studentName": "",
+      "receivedBy": "",
+      "receivedBySignUrl": ""
+    },
+    {
+      "id": 1767600939922,
+      "type": "expense",
+      "amount": 2766,
+      "description": "Vegetables and groceries",
+      "category": "Food",
+      "date": "2025-12-31T10:00:00",
+      "studentName": "",
+      "receivedBy": "",
+      "receivedBySignUrl": ""
+    },
+    {
+      "id": 1767600939923,
+      "type": "meal",
+      "amount": 2411,
+      "description": "Lunch for students",
+      "category": "Food",
+      "date": "2025-12-31T13:00:00",
+      "mealType": "lunch",
+      "mealItems": [
+        {
+          "name": "Rice",
+          "amount": 500
+        },
+        {
+          "name": "Chicken",
+          "amount": 800
+        },
+        {
+          "name": "Vegetables",
+          "amount": 400
+        },
+        {
+          "name": "Spices",
+          "amount": 150
+        }
+      ],
+      "studentName": "",
+      "receivedBy": "",
+      "receivedBySignUrl": ""
+    },
+    {
+      "id": 1767600939924,
+      "type": "meal",
+      "amount": 2279,
+      "description": "Dinner for students",
+      "category": "Food",
+      "date": "2025-12-31T20:00:00",
+      "mealType": "dinner",
+      "mealItems": [
+        {
+          "name": "Roti",
+          "amount": 300
+        },
+        {
+          "name": "Daal",
+          "amount": 400
+        },
+        {
+          "name": "Sabzi",
+          "amount": 600
+        },
+        {
+          "name": "Salad",
+          "amount": 150
+        }
+      ],
+      "studentName": "",
+      "receivedBy": "",
+      "receivedBySignUrl": ""
+    },
+    {
+      "id": 1767600940921,
+      "type": "meal",
+      "amount": 1939,
+      "description": "Daily meals expense",
+      "category": "Food",
+      "date": "2025-12-30T08:00:00",
+      "mealType": "breakfast",
+      "mealItems": [
+        {
+          "name": "Eggs",
+          "amount": 400
+        },
+        {
+          "name": "Bread",
+          "amount": 300
+        },
+        {
+          "name": "Milk",
+          "amount": 200
+        },
+        {
+          "name": "Butter",
+          "amount": 150
+        }
+      ],
+      "studentName": "",
+      "receivedBy": "",
+      "receivedBySignUrl": ""
+    },
+    {
+      "id": 1767600940922,
+      "type": "expense",
+      "amount": 3435,
+      "description": "Vegetables and groceries",
+      "category": "Food",
+      "date": "2025-12-30T10:00:00",
+      "studentName": "",
+      "receivedBy": "",
+      "receivedBySignUrl": ""
+    },
+    {
+      "id": 1767600940923,
+      "type": "meal",
+      "amount": 2077,
+      "description": "Lunch for students",
+      "category": "Food",
+      "date": "2025-12-30T13:00:00",
+      "mealType": "lunch",
+      "mealItems": [
+        {
+          "name": "Rice",
+          "amount": 500
+        },
+        {
+          "name": "Chicken",
+          "amount": 800
+        },
+        {
+          "name": "Vegetables",
+          "amount": 400
+        },
+        {
+          "name": "Spices",
+          "amount": 150
+        }
+      ],
+      "studentName": "",
+      "receivedBy": "",
+      "receivedBySignUrl": ""
+    },
+    {
+      "id": 1767600940924,
+      "type": "meal",
+      "amount": 2056,
+      "description": "Dinner for students",
+      "category": "Food",
+      "date": "2025-12-30T20:00:00",
+      "mealType": "dinner",
+      "mealItems": [
+        {
+          "name": "Roti",
+          "amount": 300
+        },
+        {
+          "name": "Daal",
+          "amount": 400
+        },
+        {
+          "name": "Sabzi",
+          "amount": 600
+        },
+        {
+          "name": "Salad",
+          "amount": 150
+        }
+      ],
+      "studentName": "",
+      "receivedBy": "",
+      "receivedBySignUrl": ""
+    },
+    {
+      "id": 1767600940925,
+      "type": "expense",
+      "amount": 618,
+      "description": "Miscellaneous expenses",
+      "category": "Daily Expenses",
+      "date": "2025-12-30T15:00:00",
+      "studentName": "",
+      "receivedBy": "",
+      "receivedBySignUrl": ""
+    },
+    {
+      "id": 1767600944921,
+      "type": "fee",
+      "amount": 15000,
+      "description": "Monthly Hostel Fee",
+      "category": "Monthly Fee",
+      "date": "2026-01-05T10:00:00",
+      "studentName": "Basheer Ali",
+      "receivedBy": "Faiq Ali",
+      "receivedBySignUrl": "faiqsign.jpg"
     }
   ],
   "receivers": [
@@ -176,13 +938,21 @@
       "Utilities",
       "Staff Salary",
       "Daily Expenses",
+      "Maintenance",
       "Others"
     ],
     "fees": [
       "Monthly Fee",
       "Admission",
       "Security",
+      "Late Fee",
       "Others"
+    ],
+    "meals": [
+      "breakfast",
+      "lunch",
+      "dinner",
+      "other"
     ]
   }
 }
