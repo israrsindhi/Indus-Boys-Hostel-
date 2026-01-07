@@ -146,6 +146,7 @@
             font-size: 12px;
             color: var(--text-secondary);
             transition: var(--transition);
+            cursor: pointer;
         }
 
         .icon-btn:active {
@@ -159,16 +160,7 @@
             padding: 12px;
         }
 
-        /* Content Sections */
-        .content-section {
-            display: none;
-        }
-
-        .content-section.active {
-            display: block;
-        }
-
-        /* Dashboard Section */
+        /* Stats Grid */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -340,16 +332,26 @@
         }
 
         .expense-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
             padding: 8px 0;
             border-bottom: 1px solid var(--border-color);
+            cursor: pointer;
+            transition: var(--transition);
         }
 
         .expense-item:last-child {
             border-bottom: none;
             padding-bottom: 0;
+        }
+
+        .expense-item:active {
+            background: var(--bg-secondary);
+        }
+
+        .expense-main {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4px;
         }
 
         .expense-info {
@@ -368,13 +370,16 @@
             justify-content: center;
             font-size: 10px;
             color: white;
+            flex-shrink: 0;
         }
 
-        .food .expense-icon { background: #f59e0b; }
-        .salaries .expense-icon { background: #3b82f6; }
-        .utilities .expense-icon { background: #10b981; }
-        .maintenance .expense-icon { background: #8b5cf6; }
-        .other .expense-icon { background: #64748b; }
+        .mixed .expense-icon { background: #8b5cf6; }
+        .sabzi .expense-icon { background: #10b981; }
+        .maintenance .expense-icon { background: #3b82f6; }
+        .salaries .expense-icon { background: #f59e0b; }
+        .ration .expense-icon { background: #ef4444; }
+        .lunch .expense-icon { background: #ec4899; }
+        .advance .expense-icon { background: #64748b; }
 
         .expense-details {
             flex: 1;
@@ -404,315 +409,71 @@
             text-align: right;
         }
 
-        /* Stats Section */
-        .stats-container {
-            padding: 8px 0;
-        }
-
-        .chart-card {
-            background: var(--bg-card);
-            border-radius: var(--radius-md);
-            border: 1px solid var(--border-color);
-            padding: 16px;
-            margin-bottom: 12px;
-        }
-
-        .chart-title {
-            font-size: 13px;
-            font-weight: 600;
-            margin-bottom: 12px;
-            color: var(--text-primary);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .chart-placeholder {
-            height: 150px;
-            background: var(--bg-secondary);
-            border-radius: var(--radius-sm);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-secondary);
-        }
-
-        .chart-placeholder i {
-            font-size: 24px;
-            margin-bottom: 8px;
-        }
-
-        .chart-placeholder p {
-            font-size: 11px;
-        }
-
-        .summary-list {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .summary-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 12px;
-            background: var(--bg-card);
-            border-radius: var(--radius-md);
-            border: 1px solid var(--border-color);
-        }
-
-        .summary-label {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .summary-label i {
-            font-size: 12px;
-            color: var(--secondary);
-        }
-
-        .summary-label span {
-            font-size: 12px;
-            color: var(--text-primary);
-        }
-
-        .summary-value {
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        /* Calendar Section */
-        .calendar-container {
-            padding: 8px 0;
-        }
-
-        .month-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 16px;
-            padding: 12px;
-            background: var(--bg-card);
-            border-radius: var(--radius-md);
-            border: 1px solid var(--border-color);
-        }
-
-        .month-title {
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        .month-nav {
-            display: flex;
-            gap: 8px;
-        }
-
-        .month-btn {
-            width: 32px;
-            height: 32px;
-            border-radius: 6px;
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            color: var(--text-secondary);
-        }
-
-        .calendar-grid {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 4px;
-            margin-bottom: 16px;
-        }
-
-        .calendar-day-header {
-            text-align: center;
+        .subitems-toggle {
             font-size: 10px;
-            font-weight: 600;
-            color: var(--text-secondary);
-            padding: 6px 0;
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-top: 4px;
+            cursor: pointer;
         }
 
-        .calendar-day {
-            aspect-ratio: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            border-radius: 6px;
-            font-size: 11px;
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
+        .subitems-toggle i {
+            font-size: 8px;
             transition: var(--transition);
         }
 
-        .calendar-day.active {
-            background: var(--secondary);
-            color: white;
-            border-color: var(--secondary);
+        .subitems-toggle.active i {
+            transform: rotate(180deg);
         }
 
-        .calendar-day.has-expenses {
-            border-color: var(--danger);
+        /* Sub-items Table */
+        .subitems-table {
+            margin-top: 8px;
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            display: none;
         }
 
-        .calendar-day .expense-dot {
-            width: 4px;
-            height: 4px;
-            background: var(--danger);
-            border-radius: 50%;
-            margin-top: 2px;
+        .subitems-table.active {
+            display: block;
         }
 
-        .calendar-events {
-            margin-top: 20px;
-        }
-
-        .calendar-event {
+        .subitem-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 12px;
-            margin-bottom: 8px;
-            background: var(--bg-card);
-            border-radius: var(--radius-md);
-            border: 1px solid var(--border-color);
-        }
-
-        .event-date {
-            font-size: 11px;
-            color: var(--text-secondary);
-            margin-bottom: 2px;
-        }
-
-        .event-title {
-            font-size: 12px;
-            font-weight: 500;
-            color: var(--text-primary);
-        }
-
-        .event-amount {
-            font-size: 12px;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        /* Settings Section */
-        .settings-container {
-            padding: 8px 0;
-        }
-
-        .settings-card {
-            background: var(--bg-card);
-            border-radius: var(--radius-md);
-            border: 1px solid var(--border-color);
-            padding: 16px;
-            margin-bottom: 12px;
-        }
-
-        .settings-title {
-            font-size: 13px;
-            font-weight: 600;
-            margin-bottom: 16px;
-            color: var(--text-primary);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .settings-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12px 0;
+            padding: 8px 12px;
             border-bottom: 1px solid var(--border-color);
-        }
-
-        .settings-item:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-        }
-
-        .settings-label {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .settings-label i {
-            font-size: 12px;
-            color: var(--text-secondary);
-        }
-
-        .settings-label span {
-            font-size: 12px;
-            color: var(--text-primary);
-        }
-
-        .settings-value {
-            font-size: 12px;
-            color: var(--text-secondary);
-        }
-
-        .settings-toggle {
-            width: 44px;
-            height: 24px;
-            background: var(--border-color);
-            border-radius: 12px;
-            position: relative;
-            transition: var(--transition);
-        }
-
-        .settings-toggle.active {
-            background: var(--accent);
-        }
-
-        .settings-toggle::after {
-            content: '';
-            position: absolute;
-            top: 2px;
-            left: 2px;
-            width: 20px;
-            height: 20px;
-            background: white;
-            border-radius: 50%;
-            transition: var(--transition);
-        }
-
-        .settings-toggle.active::after {
-            left: 22px;
-        }
-
-        .settings-btn {
-            width: 100%;
-            padding: 12px;
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-md);
-            font-size: 12px;
-            font-weight: 500;
-            color: var(--text-primary);
-            text-align: center;
-            transition: var(--transition);
-        }
-
-        .settings-btn.danger {
-            border-color: var(--danger);
-            color: var(--danger);
-        }
-
-        .settings-btn:active {
             background: var(--bg-secondary);
         }
 
-        /* Empty State */
+        .subitem-row:last-child {
+            border-bottom: none;
+        }
+
+        .subitem-name {
+            font-size: 11px;
+            color: var(--text-primary);
+            flex: 1;
+        }
+
+        .subitem-amount {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-primary);
+            min-width: 50px;
+            text-align: right;
+        }
+
+        .subitems-total {
+            background: var(--bg-primary);
+            border-top: 2px solid var(--border-color);
+            font-weight: 700;
+        }
+
         .empty-state {
             text-align: center;
             padding: 40px 20px;
@@ -873,106 +634,123 @@
             max-height: calc(80vh - 57px);
         }
 
-        /* Modal Content */
-        .modal-date-header {
+        /* Modal Content - Detailed Expense View */
+        .expense-detail-header {
             text-align: center;
             margin-bottom: 20px;
             padding-bottom: 16px;
             border-bottom: 1px solid var(--border-color);
         }
 
-        .modal-date-title {
-            font-size: 14px;
-            font-weight: 600;
+        .expense-detail-title {
+            font-size: 16px;
+            font-weight: 700;
             color: var(--text-primary);
             margin-bottom: 8px;
         }
 
-        .modal-date-total {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin: 8px 0;
-        }
-
-        .modal-expense-count {
+        .expense-detail-category {
             font-size: 11px;
-            color: var(--text-secondary);
-            background: var(--bg-secondary);
+            color: white;
             padding: 4px 10px;
             border-radius: 12px;
             display: inline-block;
-        }
-
-        .expense-detail-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-md);
-            padding: 14px;
-            margin-bottom: 10px;
-        }
-
-        .detail-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
+            font-weight: 600;
             margin-bottom: 12px;
-            padding-bottom: 12px;
-            border-bottom: 1px solid var(--border-color);
         }
 
-        .detail-title h4 {
-            font-size: 13px;
+        .expense-detail-amount {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin: 12px 0;
+        }
+
+        .expense-detail-date {
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .expense-detail-description {
+            font-size: 12px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin-bottom: 20px;
+            padding: 12px;
+            background: var(--bg-secondary);
+            border-radius: var(--radius-sm);
+        }
+
+        /* Detailed Sub-items Table in Modal */
+        .detailed-subitems-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .detailed-subitems-table th {
+            background: var(--bg-secondary);
+            padding: 10px 12px;
+            text-align: left;
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .detailed-subitems-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 12px;
+        }
+
+        .detailed-subitems-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .detailed-subitems-table tbody tr:hover {
+            background: var(--bg-secondary);
+        }
+
+        .subitem-name-cell {
+            color: var(--text-primary);
+        }
+
+        .subitem-amount-cell {
             font-weight: 600;
             color: var(--text-primary);
-            margin-bottom: 6px;
+            text-align: right;
         }
 
-        .detail-category {
-            font-size: 10px;
-            color: white;
-            padding: 3px 8px;
-            border-radius: 10px;
-            display: inline-block;
-            font-weight: 500;
-        }
-
-        .food .detail-category { background: #f59e0b; }
-        .salaries .detail-category { background: #3b82f6; }
-        .utilities .detail-category { background: #10b981; }
-        .maintenance .detail-category { background: #8b5cf6; }
-        .other .detail-category { background: #64748b; }
-
-        .detail-amount {
-            font-size: 16px;
+        .subitems-total-row {
+            background: var(--bg-primary);
             font-weight: 700;
-            color: var(--text-primary);
+            border-top: 2px solid var(--border-color);
         }
 
-        .detail-description {
-            background: var(--bg-secondary);
-            padding: 12px;
-            border-radius: var(--radius-sm);
-            margin-bottom: 12px;
-            font-size: 12px;
-            line-height: 1.5;
-            color: var(--text-secondary);
+        .subitems-total-row td {
+            font-size: 13px;
         }
 
-        .detail-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 10px;
+        .expense-meta {
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-color);
+            font-size: 11px;
             color: var(--text-light);
         }
 
-        .detail-id {
+        .expense-id {
             font-family: monospace;
-            background: var(--bg-card);
-            padding: 4px 8px;
+            background: var(--bg-secondary);
+            padding: 6px 10px;
             border-radius: 6px;
-            border: 1px solid var(--border-color);
+            display: inline-block;
+            margin-top: 8px;
         }
 
         /* Error State */
@@ -1063,7 +841,7 @@
     <!-- Loading Screen -->
     <div class="loading-screen" id="loadingScreen">
         <div class="loader"></div>
-        <div class="loading-text">Loading data...</div>
+        <div class="loading-text">Loading expense data...</div>
     </div>
 
     <!-- Header -->
@@ -1073,8 +851,8 @@
                 <i class="fas fa-home"></i>
             </div>
             <div class="header-text">
-                <h1 id="headerTitle">Expense Tracker</h1>
-                <p id="headerSubtitle">Hostel Management</p>
+                <h1>Hostel Expense Tracker</h1>
+                <p>Detailed Expense Management</p>
             </div>
         </div>
         <div class="header-actions">
@@ -1086,206 +864,58 @@
 
     <!-- Main Content -->
     <main class="main-content">
-        <!-- Dashboard Section -->
-        <section id="dashboardSection" class="content-section active">
-            <!-- Stats -->
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-header">
-                        <div class="stat-icon students">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <span>Students</span>
+        <!-- Stats -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-header">
+                    <div class="stat-icon students">
+                        <i class="fas fa-users"></i>
                     </div>
-                    <div class="stat-value" id="totalStudents">0</div>
-                    <div class="stat-subtext">Active residents</div>
+                    <span>Students</span>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-header">
-                        <div class="stat-icon expenses">
-                            <i class="fas fa-receipt"></i>
-                        </div>
-                        <span>Expenses</span>
-                    </div>
-                    <div class="stat-value" id="totalExpenses">₨0</div>
-                    <div class="stat-subtext">Total spent</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-header">
-                        <div class="stat-icon payments">
-                            <i class="fas fa-credit-card"></i>
-                        </div>
-                        <span>Payments</span>
-                    </div>
-                    <div class="stat-value" id="totalPayments">₨0</div>
-                    <div class="stat-subtext">Received</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-header">
-                        <div class="stat-icon balance">
-                            <i class="fas fa-balance-scale"></i>
-                        </div>
-                        <span>Balance</span>
-                    </div>
-                    <div class="stat-value" id="balanceDue">₨0</div>
-                    <div class="stat-subtext">Pending</div>
-                </div>
+                <div class="stat-value" id="totalStudents">0</div>
+                <div class="stat-subtext">Active residents</div>
             </div>
-
-            <!-- Date Section -->
-            <div class="section-header">
-                <h2 class="section-title">
-                    <i class="fas fa-calendar-day"></i>
-                    Daily Expenses
-                </h2>
-                <div class="section-count" id="totalExpensesCount">0 items</div>
-            </div>
-
-            <!-- Date Cards -->
-            <div class="date-cards" id="dateCardsContainer">
-                <!-- Date cards will be loaded here -->
-            </div>
-        </section>
-
-        <!-- Stats Section -->
-        <section id="statsSection" class="content-section">
-            <div class="section-header">
-                <h2 class="section-title">
-                    <i class="fas fa-chart-bar"></i>
-                    Statistics
-                </h2>
-            </div>
-
-            <div class="stats-container">
-                <div class="chart-card">
-                    <div class="chart-title">
-                        <i class="fas fa-chart-pie"></i>
-                        Expense Categories
+            <div class="stat-card">
+                <div class="stat-header">
+                    <div class="stat-icon expenses">
+                        <i class="fas fa-receipt"></i>
                     </div>
-                    <div class="chart-placeholder" id="categoryChart">
-                        <i class="fas fa-chart-pie"></i>
-                        <p>Category breakdown will appear here</p>
-                    </div>
+                    <span>Total Expenses</span>
                 </div>
-
-                <div class="chart-card">
-                    <div class="chart-title">
-                        <i class="fas fa-chart-line"></i>
-                        Monthly Overview
-                    </div>
-                    <div class="chart-placeholder" id="monthlyChart">
-                        <i class="fas fa-chart-line"></i>
-                        <p>Monthly data will appear here</p>
-                    </div>
-                </div>
-
-                <div class="summary-list" id="statsSummary">
-                    <!-- Stats summary will be loaded here -->
-                </div>
+                <div class="stat-value" id="totalExpenses">₨0</div>
+                <div class="stat-subtext">All categories</div>
             </div>
-        </section>
-
-        <!-- Calendar Section -->
-        <section id="calendarSection" class="content-section">
-            <div class="section-header">
-                <h2 class="section-title">
-                    <i class="fas fa-calendar-alt"></i>
-                    Calendar
-                </h2>
-                <div class="section-count" id="calendarCount">This month</div>
+            <div class="stat-card">
+                <div class="stat-header">
+                    <div class="stat-icon payments">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <span>Total Payments</span>
+                </div>
+                <div class="stat-value" id="totalPayments">₨0</div>
+                <div class="stat-subtext">Received</div>
             </div>
-
-            <div class="calendar-container">
-                <div class="month-header">
-                    <div class="month-title" id="currentMonth">January 2026</div>
-                    <div class="month-nav">
-                        <button class="month-btn" id="prevMonth">
-                            <i class="fas fa-chevron-left"></i>
-                        </button>
-                        <button class="month-btn" id="todayBtn">Today</button>
-                        <button class="month-btn" id="nextMonth">
-                            <i class="fas fa-chevron-right"></i>
-                        </button>
+            <div class="stat-card">
+                <div class="stat-header">
+                    <div class="stat-icon balance">
+                        <i class="fas fa-balance-scale"></i>
                     </div>
+                    <span>Balance Due</span>
                 </div>
-
-                <div class="calendar-grid" id="calendarGrid">
-                    <!-- Calendar will be generated here -->
-                </div>
-
-                <div class="calendar-events" id="calendarEvents">
-                    <!-- Calendar events will be loaded here -->
-                </div>
+                <div class="stat-value" id="balanceDue">₨0</div>
+                <div class="stat-subtext">Pending</div>
             </div>
-        </section>
+        </div>
 
-        <!-- Settings Section -->
-        <section id="settingsSection" class="content-section">
-            <div class="section-header">
-                <h2 class="section-title">
-                    <i class="fas fa-cog"></i>
-                    Settings
-                </h2>
-            </div>
-
-            <div class="settings-container">
-                <div class="settings-card">
-                    <div class="settings-title">
-                        <i class="fas fa-sliders-h"></i>
-                        Display Settings
-                    </div>
-                    <div class="settings-item">
-                        <div class="settings-label">
-                            <i class="fas fa-palette"></i>
-                            <span>Dark Mode</span>
-                        </div>
-                        <div class="settings-toggle" id="darkModeToggle"></div>
-                    </div>
-                    <div class="settings-item">
-                        <div class="settings-label">
-                            <i class="fas fa-bell"></i>
-                            <span>Notifications</span>
-                        </div>
-                        <div class="settings-toggle active" id="notificationsToggle"></div>
-                    </div>
-                    <div class="settings-item">
-                        <div class="settings-label">
-                            <i class="fas fa-chart-line"></i>
-                            <span>Show Charts</span>
-                        </div>
-                        <div class="settings-toggle active" id="chartsToggle"></div>
-                    </div>
-                </div>
-
-                <div class="settings-card">
-                    <div class="settings-title">
-                        <i class="fas fa-database"></i>
-                        Data Management
-                    </div>
-                    <div class="settings-item">
-                        <div class="settings-label">
-                            <i class="fas fa-file-export"></i>
-                            <span>Last Updated</span>
-                        </div>
-                        <div class="settings-value" id="lastUpdated">Just now</div>
-                    </div>
-                    <div class="settings-item">
-                        <div class="settings-label">
-                            <i class="fas fa-file-alt"></i>
-                            <span>Data Source</span>
-                        </div>
-                        <div class="settings-value">data.json</div>
-                    </div>
-                </div>
-
-                <button class="settings-btn" id="exportDataBtn">
-                    <i class="fas fa-download"></i> Export Data
-                </button>
-                <button class="settings-btn danger" id="clearCacheBtn">
-                    <i class="fas fa-trash"></i> Clear Cache
-                </button>
-            </div>
-        </section>
+        <!-- Date Section -->
+        <div class="section-header">
+            <h2 class="section-title">
+                <i class="fas fa-calendar-day"></i>
+                Daily Expenses
+            </h2>
+            <div class="section-count" id="totalExpensesCount">0 expenses</div>
+        </div>
 
         <!-- Error State -->
         <div class="error-state" id="errorState" style="display: none;">
@@ -1297,34 +927,39 @@
             <p>Please ensure the file exists in the same directory</p>
             <p>File format must match the expected JSON structure</p>
         </div>
+
+        <!-- Date Cards -->
+        <div class="date-cards" id="dateCardsContainer">
+            <!-- Date cards will be loaded here -->
+        </div>
     </main>
 
     <!-- Bottom Navigation -->
     <nav class="bottom-nav">
-        <div class="nav-item active" data-section="dashboardSection">
+        <div class="nav-item active">
             <i class="fas fa-home nav-icon"></i>
-            <span class="nav-label">Home</span>
+            <span class="nav-label">Expenses</span>
         </div>
-        <div class="nav-item" data-section="statsSection">
+        <div class="nav-item">
             <i class="fas fa-chart-bar nav-icon"></i>
-            <span class="nav-label">Stats</span>
+            <span class="nav-label">Analytics</span>
         </div>
-        <div class="nav-item" data-section="calendarSection">
+        <div class="nav-item">
             <i class="fas fa-calendar-alt nav-icon"></i>
             <span class="nav-label">Calendar</span>
         </div>
-        <div class="nav-item" data-section="settingsSection">
+        <div class="nav-item">
             <i class="fas fa-cog nav-icon"></i>
             <span class="nav-label">Settings</span>
         </div>
     </nav>
 
     <!-- Modal -->
-    <div class="modal" id="dateModal">
+    <div class="modal" id="expenseModal">
         <div class="modal-content">
             <div class="modal-header">
                 <div class="modal-title">
-                    <i class="fas fa-file-invoice"></i>
+                    <i class="fas fa-file-invoice-dollar"></i>
                     Expense Details
                 </div>
                 <button class="close-modal">
@@ -1345,17 +980,8 @@
             payments: []
         };
 
-        // Current state
-        let currentState = {
-            currentSection: 'dashboardSection',
-            currentMonth: new Date().getMonth(),
-            currentYear: new Date().getFullYear()
-        };
-
         // DOM elements
         const loadingScreen = document.getElementById('loadingScreen');
-        const headerTitle = document.getElementById('headerTitle');
-        const headerSubtitle = document.getElementById('headerSubtitle');
         const totalStudents = document.getElementById('totalStudents');
         const totalExpenses = document.getElementById('totalExpenses');
         const totalPayments = document.getElementById('totalPayments');
@@ -1363,39 +989,30 @@
         const totalExpensesCount = document.getElementById('totalExpensesCount');
         const dateCardsContainer = document.getElementById('dateCardsContainer');
         const errorState = document.getElementById('errorState');
-        const refreshBtn = document.getElementById('refreshBtn');
-        const navItems = document.querySelectorAll('.nav-item');
-        const contentSections = document.querySelectorAll('.content-section');
-        const dateModal = document.getElementById('dateModal');
+        const expenseModal = document.getElementById('expenseModal');
         const modalContent = document.getElementById('modalContent');
+        const refreshBtn = document.getElementById('refreshBtn');
 
-        // Stats section elements
-        const statsSummary = document.getElementById('statsSummary');
-        const currentMonthEl = document.getElementById('currentMonth');
-        const calendarGrid = document.getElementById('calendarGrid');
-        const calendarEvents = document.getElementById('calendarEvents');
-        const prevMonthBtn = document.getElementById('prevMonth');
-        const nextMonthBtn = document.getElementById('nextMonth');
-        const todayBtn = document.getElementById('todayBtn');
-
-        // Settings elements
-        const darkModeToggle = document.getElementById('darkModeToggle');
-        const notificationsToggle = document.getElementById('notificationsToggle');
-        const chartsToggle = document.getElementById('chartsToggle');
-        const lastUpdated = document.getElementById('lastUpdated');
-        const exportDataBtn = document.getElementById('exportDataBtn');
-        const clearCacheBtn = document.getElementById('clearCacheBtn');
-
-        // Category mapping
+        // Category to CSS class mapping
         const categoryClasses = {
-            'Food': 'food',
-            'Salaries': 'salaries',
-            'Utilities': 'utilities',
+            'Mixed': 'mixed',
+            'Sabzi': 'sabzi',
             'Maintenance': 'maintenance',
-            'Breakfast': 'food',
-            'Lunch': 'food',
-            'Dinner': 'food',
-            'Other': 'other'
+            'Salaries': 'salaries',
+            'Ration': 'ration',
+            'Lunch': 'lunch',
+            'Advance': 'advance'
+        };
+
+        // Category icon mapping
+        const categoryIcons = {
+            'Mixed': 'fas fa-layer-group',
+            'Sabzi': 'fas fa-carrot',
+            'Maintenance': 'fas fa-tools',
+            'Salaries': 'fas fa-money-check-alt',
+            'Ration': 'fas fa-shopping-basket',
+            'Lunch': 'fas fa-utensils',
+            'Advance': 'fas fa-hand-holding-usd'
         };
 
         // Format currency in PKR
@@ -1417,67 +1034,41 @@
             };
         }
 
+        // Format full date for modal
+        function formatFullDate(dateString) {
+            const date = new Date(dateString);
+            const options = { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            };
+            return date.toLocaleDateString('en-PK', options);
+        }
+
         // Get category class
         function getCategoryClass(category) {
-            return categoryClasses[category] || 'other';
+            return categoryClasses[category] || 'mixed';
         }
 
-        // Switch section
-        function switchSection(sectionId) {
-            // Update navigation
-            navItems.forEach(item => {
-                if (item.dataset.section === sectionId) {
-                    item.classList.add('active');
-                } else {
-                    item.classList.remove('active');
-                }
-            });
+        // Get category icon
+        function getCategoryIcon(category) {
+            return categoryIcons[category] || 'fas fa-file-invoice-dollar';
+        }
 
-            // Update content sections
-            contentSections.forEach(section => {
-                if (section.id === sectionId) {
-                    section.classList.add('active');
-                } else {
-                    section.classList.remove('active');
-                }
-            });
-
-            // Update header
-            updateHeaderForSection(sectionId);
+        // Toggle sub-items visibility
+        function toggleSubItems(button, expenseId) {
+            const table = button.parentElement.nextElementSibling;
+            const isActive = table.classList.contains('active');
             
-            // Load section data
-            loadSectionData(sectionId);
-        }
-
-        // Update header for section
-        function updateHeaderForSection(sectionId) {
-            const titles = {
-                'dashboardSection': { title: 'Expense Tracker', subtitle: 'Hostel Management' },
-                'statsSection': { title: 'Statistics', subtitle: 'Data Analysis' },
-                'calendarSection': { title: 'Calendar', subtitle: 'Expense Timeline' },
-                'settingsSection': { title: 'Settings', subtitle: 'App Configuration' }
-            };
-
-            const sectionTitle = titles[sectionId];
-            headerTitle.textContent = sectionTitle.title;
-            headerSubtitle.textContent = sectionTitle.subtitle;
-        }
-
-        // Load section data
-        function loadSectionData(sectionId) {
-            switch(sectionId) {
-                case 'dashboardSection':
-                    renderDateCards();
-                    break;
-                case 'statsSection':
-                    renderStatsSection();
-                    break;
-                case 'calendarSection':
-                    renderCalendar();
-                    break;
-                case 'settingsSection':
-                    updateSettings();
-                    break;
+            if (isActive) {
+                table.classList.remove('active');
+                button.classList.remove('active');
+                button.innerHTML = '<i class="fas fa-chevron-down"></i> Show Details';
+            } else {
+                table.classList.add('active');
+                button.classList.add('active');
+                button.innerHTML = '<i class="fas fa-chevron-up"></i> Hide Details';
             }
         }
 
@@ -1501,11 +1092,18 @@
                 appData.expenses = data.expenses || [];
                 appData.payments = data.payments || [];
                 
+                // Validate and ensure subItems exist for all expenses
+                appData.expenses.forEach(expense => {
+                    if (!expense.subItems) {
+                        expense.subItems = [];
+                    }
+                });
+                
                 // Update statistics
                 updateStatistics();
                 
-                // Update last updated time
-                lastUpdated.textContent = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                // Render date cards
+                renderDateCards();
                 
                 // Hide loading screen
                 setTimeout(() => {
@@ -1551,7 +1149,7 @@
             balanceDue.textContent = formatCurrency(balance);
             
             // Total expenses count
-            totalExpensesCount.textContent = `${appData.expenses.length} items`;
+            totalExpensesCount.textContent = `${appData.expenses.length} expenses`;
         }
 
         // Render date cards
@@ -1595,22 +1193,54 @@
                 
                 expenses.forEach(expense => {
                     const categoryClass = getCategoryClass(expense.category);
+                    const categoryIcon = getCategoryIcon(expense.category);
+                    const hasSubItems = expense.subItems && expense.subItems.length > 0;
                     
-                    expenseItemsHTML += `
-                        <div class="expense-item">
-                            <div class="expense-info">
-                                <div class="expense-icon ${categoryClass}">
-                                    <i class="fas fa-${categoryClass === 'food' ? 'utensils' : 
-                                                       categoryClass === 'salaries' ? 'money-check' : 
-                                                       categoryClass === 'utilities' ? 'bolt' : 
-                                                       categoryClass === 'maintenance' ? 'tools' : 'file-invoice'}"></i>
-                                </div>
-                                <div class="expense-details">
-                                    <div class="expense-title">${expense.title}</div>
-                                    <span class="expense-category">${expense.category}</span>
+                    // Calculate sub-items total
+                    const subItemsTotal = hasSubItems ? 
+                        expense.subItems.reduce((sum, item) => sum + item.amount, 0) : 
+                        expense.amount;
+                    
+                    // Create sub-items table if exists
+                    let subItemsHTML = '';
+                    if (hasSubItems) {
+                        subItemsHTML = `
+                            <div class="subitems-table" data-expense-id="${expense.id}">
+                                ${expense.subItems.map(item => `
+                                    <div class="subitem-row">
+                                        <div class="subitem-name">${item.name}</div>
+                                        <div class="subitem-amount">${formatCurrency(item.amount)}</div>
+                                    </div>
+                                `).join('')}
+                                <div class="subitem-row subitems-total">
+                                    <div class="subitem-name">Total</div>
+                                    <div class="subitem-amount">${formatCurrency(subItemsTotal)}</div>
                                 </div>
                             </div>
-                            <div class="expense-amount">${formatCurrency(expense.amount)}</div>
+                        `;
+                    }
+                    
+                    expenseItemsHTML += `
+                        <div class="expense-item" data-expense-id="${expense.id}">
+                            <div class="expense-main">
+                                <div class="expense-info">
+                                    <div class="expense-icon ${categoryClass}">
+                                        <i class="${categoryIcon}"></i>
+                                    </div>
+                                    <div class="expense-details">
+                                        <div class="expense-title">${expense.title}</div>
+                                        <span class="expense-category">${expense.category}</span>
+                                    </div>
+                                </div>
+                                <div class="expense-amount">${formatCurrency(expense.amount)}</div>
+                            </div>
+                            ${hasSubItems ? `
+                                <div class="subitems-toggle" onclick="toggleSubItems(this, '${expense.id}')">
+                                    <i class="fas fa-chevron-down"></i>
+                                    Show Details
+                                </div>
+                            ` : ''}
+                            ${subItemsHTML}
                         </div>
                     `;
                 });
@@ -1618,7 +1248,6 @@
                 // Create date card
                 const dateCard = document.createElement('div');
                 dateCard.className = 'date-card';
-                dateCard.setAttribute('data-date', date);
                 
                 dateCard.innerHTML = `
                     <div class="date-header">
@@ -1641,269 +1270,99 @@
                 
                 dateCardsContainer.appendChild(dateCard);
                 
-                // Add click event listener
-                dateCard.addEventListener('click', () => {
-                    showDateDetails(date, expenses);
+                // Add click event listeners to expense items for modal
+                dateCard.querySelectorAll('.expense-item').forEach(item => {
+                    item.addEventListener('click', (e) => {
+                        // Don't trigger modal if clicking on toggle button
+                        if (!e.target.closest('.subitems-toggle')) {
+                            const expenseId = item.dataset.expenseId;
+                            const expense = appData.expenses.find(exp => exp.id === expenseId);
+                            if (expense) {
+                                showExpenseDetails(expense);
+                            }
+                        }
+                    });
                 });
             });
         }
 
-        // Show date details in modal
-        function showDateDetails(date, expenses) {
-            const dateInfo = formatDateDisplay(date);
-            const totalAmount = expenses.reduce((sum, expense) => sum + expense.amount, 0);
+        // Show expense details in modal
+        function showExpenseDetails(expense) {
+            const categoryClass = getCategoryClass(expense.category);
+            const categoryIcon = getCategoryIcon(expense.category);
+            const hasSubItems = expense.subItems && expense.subItems.length > 0;
+            const dateInfo = formatFullDate(expense.date);
             
-            // Create HTML for expense details
-            let expenseDetailsHTML = '';
-            
-            expenses.forEach((expense) => {
-                const categoryClass = getCategoryClass(expense.category);
+            // Create detailed sub-items table if exists
+            let subItemsHTML = '';
+            if (hasSubItems) {
+                const subItemsTotal = expense.subItems.reduce((sum, item) => sum + item.amount, 0);
                 
-                expenseDetailsHTML += `
-                    <div class="expense-detail-card">
-                        <div class="detail-header">
-                            <div class="detail-title">
-                                <h4>${expense.title}</h4>
-                                <span class="detail-category ${categoryClass}">${expense.category}</span>
-                            </div>
-                            <div class="detail-amount">${formatCurrency(expense.amount)}</div>
-                        </div>
-                        
-                        <div class="detail-description">
-                            ${expense.description || 'No description provided.'}
-                        </div>
-                        
-                        <div class="detail-meta">
-                            <div class="detail-id">
-                                ID: ${expense.id}
-                            </div>
-                            <div>
-                                ${dateInfo.fullDate}
-                            </div>
-                        </div>
+                subItemsHTML = `
+                    <div style="margin: 20px 0;">
+                        <h3 style="font-size: 14px; font-weight: 600; margin-bottom: 12px; color: var(--text-primary);">
+                            <i class="fas fa-list"></i> Detailed Breakdown
+                        </h3>
+                        <table class="detailed-subitems-table">
+                            <thead>
+                                <tr>
+                                    <th style="width: 70%;">Item Name</th>
+                                    <th style="width: 30%; text-align: right;">Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${expense.subItems.map(item => `
+                                    <tr>
+                                        <td class="subitem-name-cell">${item.name}</td>
+                                        <td class="subitem-amount-cell">${formatCurrency(item.amount)}</td>
+                                    </tr>
+                                `).join('')}
+                                <tr class="subitems-total-row">
+                                    <td><strong>Total</strong></td>
+                                    <td class="subitem-amount-cell"><strong>${formatCurrency(subItemsTotal)}</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 `;
-            });
+            }
             
             // Update modal content
             modalContent.innerHTML = `
-                <div class="modal-date-header">
-                    <div class="modal-date-title">${dateInfo.fullDate}</div>
-                    <div class="modal-date-total">${formatCurrency(totalAmount)}</div>
-                    <div class="modal-expense-count">
-                        ${expenses.length} expense${expenses.length > 1 ? 's' : ''}
+                <div class="expense-detail-header">
+                    <div class="expense-detail-title">${expense.title}</div>
+                    <div class="expense-detail-category ${categoryClass}" style="background: var(--${categoryClass});">
+                        <i class="${categoryIcon}"></i> ${expense.category}
                     </div>
+                    <div class="expense-detail-amount">${formatCurrency(expense.amount)}</div>
+                    <div class="expense-detail-date">${dateInfo}</div>
                 </div>
                 
-                ${expenseDetailsHTML}
+                ${expense.description ? `
+                    <div class="expense-detail-description">
+                        <strong>Description:</strong><br>
+                        ${expense.description}
+                    </div>
+                ` : ''}
+                
+                ${subItemsHTML}
+                
+                <div class="expense-meta">
+                    <div><strong>Expense ID:</strong></div>
+                    <div class="expense-id">${expense.id}</div>
+                </div>
             `;
             
             // Show modal
-            dateModal.classList.add('active');
+            expenseModal.classList.add('active');
             
             // Scroll to top
             modalContent.scrollTop = 0;
         }
 
-        // Render stats section
-        function renderStatsSection() {
-            if (appData.expenses.length === 0) {
-                statsSummary.innerHTML = `
-                    <div class="empty-state">
-                        <div class="empty-icon">
-                            <i class="fas fa-chart-bar"></i>
-                        </div>
-                        <h3>No Data Available</h3>
-                        <p>Add expenses to data.json to see statistics</p>
-                    </div>
-                `;
-                return;
-            }
-            
-            // Calculate category totals
-            const categoryTotals = {};
-            appData.expenses.forEach(expense => {
-                const category = expense.category;
-                categoryTotals[category] = (categoryTotals[category] || 0) + expense.amount;
-            });
-            
-            // Calculate monthly totals
-            const monthlyTotals = {};
-            appData.expenses.forEach(expense => {
-                const date = new Date(expense.date);
-                const monthYear = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
-                monthlyTotals[monthYear] = (monthlyTotals[monthYear] || 0) + expense.amount;
-            });
-            
-            // Create stats summary
-            let summaryHTML = '';
-            
-            // Top category
-            const topCategory = Object.keys(categoryTotals).reduce((a, b) => 
-                categoryTotals[a] > categoryTotals[b] ? a : b
-            );
-            
-            // Average expense
-            const avgExpense = appData.expenses.reduce((sum, expense) => sum + expense.amount, 0) / appData.expenses.length;
-            
-            // Most expensive month
-            const mostExpensiveMonth = Object.keys(monthlyTotals).reduce((a, b) => 
-                monthlyTotals[a] > monthlyTotals[b] ? a : b
-            );
-            
-            summaryHTML += `
-                <div class="summary-item">
-                    <div class="summary-label">
-                        <i class="fas fa-star"></i>
-                        <span>Top Category</span>
-                    </div>
-                    <div class="summary-value">${topCategory}</div>
-                </div>
-                <div class="summary-item">
-                    <div class="summary-label">
-                        <i class="fas fa-calculator"></i>
-                        <span>Avg. Expense</span>
-                    </div>
-                    <div class="summary-value">${formatCurrency(avgExpense.toFixed(0))}</div>
-                </div>
-                <div class="summary-item">
-                    <div class="summary-label">
-                        <i class="fas fa-calendar-alt"></i>
-                        <span>Top Month</span>
-                    </div>
-                    <div class="summary-value">${mostExpensiveMonth}</div>
-                </div>
-                <div class="summary-item">
-                    <div class="summary-label">
-                        <i class="fas fa-file-invoice-dollar"></i>
-                        <span>Total Records</span>
-                    </div>
-                    <div class="summary-value">${appData.expenses.length}</div>
-                </div>
-            `;
-            
-            statsSummary.innerHTML = summaryHTML;
-        }
-
-        // Render calendar
-        function renderCalendar() {
-            const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-            const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-            
-            // Update month title
-            currentMonthEl.textContent = `${monthNames[currentState.currentMonth]} ${currentState.currentYear}`;
-            
-            // Get first day of month
-            const firstDay = new Date(currentState.currentYear, currentState.currentMonth, 1);
-            const lastDay = new Date(currentState.currentYear, currentState.currentMonth + 1, 0);
-            
-            // Generate calendar grid
-            let calendarHTML = '';
-            
-            // Day headers
-            dayNames.forEach(day => {
-                calendarHTML += `<div class="calendar-day-header">${day}</div>`;
-            });
-            
-            // Empty cells for days before first day
-            const firstDayIndex = firstDay.getDay();
-            for (let i = 0; i < firstDayIndex; i++) {
-                calendarHTML += `<div class="calendar-day"></div>`;
-            }
-            
-            // Days of month
-            const today = new Date();
-            const isCurrentMonth = today.getMonth() === currentState.currentMonth && today.getFullYear() === currentState.currentYear;
-            
-            // Get expenses for this month
-            const monthExpenses = appData.expenses.filter(expense => {
-                const expenseDate = new Date(expense.date);
-                return expenseDate.getMonth() === currentState.currentMonth && 
-                       expenseDate.getFullYear() === currentState.currentYear;
-            });
-            
-            // Group expenses by day
-            const expensesByDay = {};
-            monthExpenses.forEach(expense => {
-                const day = new Date(expense.date).getDate();
-                if (!expensesByDay[day]) {
-                    expensesByDay[day] = [];
-                }
-                expensesByDay[day].push(expense);
-            });
-            
-            // Generate day cells
-            for (let day = 1; day <= lastDay.getDate(); day++) {
-                const hasExpenses = expensesByDay[day];
-                const isToday = isCurrentMonth && day === today.getDate();
-                
-                calendarHTML += `
-                    <div class="calendar-day ${isToday ? 'active' : ''} ${hasExpenses ? 'has-expenses' : ''}">
-                        ${day}
-                        ${hasExpenses ? '<div class="expense-dot"></div>' : ''}
-                    </div>
-                `;
-            }
-            
-            calendarGrid.innerHTML = calendarHTML;
-            
-            // Render calendar events
-            renderCalendarEvents();
-        }
-
-        // Render calendar events
-        function renderCalendarEvents() {
-            if (appData.expenses.length === 0) {
-                calendarEvents.innerHTML = `
-                    <div class="empty-state">
-                        <div class="empty-icon">
-                            <i class="fas fa-calendar"></i>
-                        </div>
-                        <h3>No Events This Month</h3>
-                        <p>Add expenses to data.json to see events</p>
-                    </div>
-                `;
-                return;
-            }
-            
-            // Get expenses for current month
-            const monthExpenses = appData.expenses.filter(expense => {
-                const expenseDate = new Date(expense.date);
-                return expenseDate.getMonth() === currentState.currentMonth && 
-                       expenseDate.getFullYear() === currentState.currentYear;
-            });
-            
-            // Sort by date
-            monthExpenses.sort((a, b) => new Date(b.date) - new Date(a.date));
-            
-            // Render events
-            let eventsHTML = '';
-            monthExpenses.forEach(expense => {
-                const dateInfo = formatDateDisplay(expense.date);
-                
-                eventsHTML += `
-                    <div class="calendar-event">
-                        <div>
-                            <div class="event-date">${dateInfo.fullDate}</div>
-                            <div class="event-title">${expense.title}</div>
-                        </div>
-                        <div class="event-amount">${formatCurrency(expense.amount)}</div>
-                    </div>
-                `;
-            });
-            
-            calendarEvents.innerHTML = eventsHTML;
-        }
-
-        // Update settings
-        function updateSettings() {
-            // Set last updated time
-            lastUpdated.textContent = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-        }
-
         // Close modal
         function closeModal() {
-            dateModal.classList.remove('active');
+            expenseModal.classList.remove('active');
         }
 
         // Refresh data
@@ -1914,9 +1373,6 @@
             
             // Reload data
             await loadData();
-            
-            // Reload current section
-            loadSectionData(currentState.currentSection);
             
             // Reset rotation
             setTimeout(() => {
@@ -1929,96 +1385,39 @@
             // Load data from external JSON file
             loadData();
             
-            // Navigation click handlers
-            navItems.forEach(item => {
-                item.addEventListener('click', () => {
-                    const sectionId = item.dataset.section;
-                    currentState.currentSection = sectionId;
-                    switchSection(sectionId);
-                });
-            });
-            
             // Refresh button
             refreshBtn.addEventListener('click', refreshData);
-            
-            // Calendar navigation
-            prevMonthBtn.addEventListener('click', () => {
-                if (currentState.currentMonth === 0) {
-                    currentState.currentMonth = 11;
-                    currentState.currentYear--;
-                } else {
-                    currentState.currentMonth--;
-                }
-                renderCalendar();
-            });
-            
-            nextMonthBtn.addEventListener('click', () => {
-                if (currentState.currentMonth === 11) {
-                    currentState.currentMonth = 0;
-                    currentState.currentYear++;
-                } else {
-                    currentState.currentMonth++;
-                }
-                renderCalendar();
-            });
-            
-            todayBtn.addEventListener('click', () => {
-                const today = new Date();
-                currentState.currentMonth = today.getMonth();
-                currentState.currentYear = today.getFullYear();
-                renderCalendar();
-            });
-            
-            // Settings toggles
-            darkModeToggle.addEventListener('click', function() {
-                this.classList.toggle('active');
-            });
-            
-            notificationsToggle.addEventListener('click', function() {
-                this.classList.toggle('active');
-            });
-            
-            chartsToggle.addEventListener('click', function() {
-                this.classList.toggle('active');
-            });
-            
-            // Export data button
-            exportDataBtn.addEventListener('click', () => {
-                const dataStr = JSON.stringify(appData, null, 2);
-                const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
-                
-                const exportFileDefaultName = 'expense-data.json';
-                
-                const linkElement = document.createElement('a');
-                linkElement.setAttribute('href', dataUri);
-                linkElement.setAttribute('download', exportFileDefaultName);
-                linkElement.click();
-            });
-            
-            // Clear cache button
-            clearCacheBtn.addEventListener('click', () => {
-                if (confirm('Clear all cached data?')) {
-                    localStorage.clear();
-                    location.reload();
-                }
-            });
             
             // Modal close handlers
             document.querySelector('.close-modal').addEventListener('click', closeModal);
             
-            dateModal.addEventListener('click', (e) => {
-                if (e.target === dateModal) {
+            expenseModal.addEventListener('click', (e) => {
+                if (e.target === expenseModal) {
                     closeModal();
                 }
             });
             
             // Escape key to close modal
             document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && dateModal.classList.contains('active')) {
+                if (e.key === 'Escape' && expenseModal.classList.contains('active')) {
                     closeModal();
                 }
             });
+            
+            // Navigation items (for future expansion)
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.addEventListener('click', function() {
+                    document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // For now, all navigation goes to expenses view
+                    // In future versions, this can be expanded
+                });
+            });
         }
+
+        // Make toggleSubItems function available globally for inline onclick
+        window.toggleSubItems = toggleSubItems;
 
         // Start the application
         document.addEventListener('DOMContentLoaded', init);
