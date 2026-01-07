@@ -21,21 +21,298 @@
   ],
   "expenses": [
     {
-      "title": "7",
-      "category": "Breakfast",
-      "amount": 77,
+      "title": "Miscellaneous (Whole Day)",
+      "category": "Mixed",
+      "amount": 3980,
+      "description": "",
+      "date": "2026-01-02",
+      "subItems": [
+        {
+          "name": "Milk (Breakfast)",
+          "amount": 400
+        },
+        {
+          "name": "Egg (Breakfast)",
+          "amount": 70
+        },
+        {
+          "name": "Oil (Breakfast)",
+          "amount": 250
+        },
+        {
+          "name": "Aato (Breakfast)",
+          "amount": 400
+        },
+        {
+          "name": "Chicken (Lunch)",
+          "amount": 1700
+        },
+        {
+          "name": "Tomato (Lunch)",
+          "amount": 200
+        },
+        {
+          "name": "Onion (Lunch)",
+          "amount": 100
+        },
+        {
+          "name": "Green Masalo (Lunch)",
+          "amount": 60
+        },
+        {
+          "name": "Dal (Dinner)",
+          "amount": 500
+        },
+        {
+          "name": "Tomato (Dinner)",
+          "amount": 70
+        },
+        {
+          "name": "Green Masalo +Onion  (Dinner)",
+          "amount": 100
+        },
+        {
+          "name": "Karahi Masalo  (Dinner)",
+          "amount": 80
+        },
+        {
+          "name": "Milk  (Dinner)",
+          "amount": 50
+        }
+      ],
+      "id": "df99ce42-fdf1-46a1-9c64-69b74e0e00e4"
+    },
+    {
+      "title": "Miscellaneous ",
+      "category": "Mixed",
+      "amount": 2580,
+      "description": "",
+      "date": "2026-01-01",
+      "subItems": [
+        {
+          "name": "Milk",
+          "amount": 400
+        },
+        {
+          "name": "Egg",
+          "amount": 70
+        },
+        {
+          "name": "Dal (lunch)",
+          "amount": 450
+        },
+        {
+          "name": "Tomato (lunch)",
+          "amount": 100
+        },
+        {
+          "name": "Onion (lunch)",
+          "amount": 100
+        },
+        {
+          "name": "Green Masalo (lunch)",
+          "amount": 50
+        },
+        {
+          "name": "Karahi Masalo (lunch)",
+          "amount": 80
+        },
+        {
+          "name": "Oil (lunch)",
+          "amount": 250
+        },
+        {
+          "name": "Gobi/Cauliflower (Dinner)",
+          "amount": 500
+        },
+        {
+          "name": "Aalo (Dinner)",
+          "amount": 100
+        },
+        {
+          "name": "Tomato  (Dinner)",
+          "amount": 100
+        },
+        {
+          "name": "Green Masalo + Gajar+ Matar  (Dinner)",
+          "amount": 100
+        },
+        {
+          "name": "Karahi Masalo  (Dinner)",
+          "amount": 80
+        },
+        {
+          "name": "Oil  (Dinner)",
+          "amount": 200
+        }
+      ],
+      "id": "e552d750-7ed0-4008-871c-9df0974c7ba2"
+    },
+    {
+      "title": "Stop Plug (for broken Toti)",
+      "category": "Maintenance",
+      "amount": 50,
       "description": "",
       "date": "2026-01-06",
-      "id": "62ce14bc-7029-42cd-8d84-b10671926d46"
+      "subItems": [],
+      "id": "a1ed3eca-f463-4574-9b5e-9abdfc161579"
+    },
+    {
+      "title": "Elect. Board",
+      "category": "Maintenance",
+      "amount": 160,
+      "description": "for street room",
+      "date": "2026-01-06",
+      "subItems": [],
+      "id": "c76833e4-d2f7-4597-a92a-07ea6a003f82"
+    },
+    {
+      "title": "Dhee",
+      "category": "Lunch",
+      "amount": 100,
+      "description": "for bhee",
+      "date": "2026-01-06",
+      "subItems": [],
+      "id": "2ccc2ae7-a410-4c30-8c00-d6a7fa1157e2"
+    },
+    {
+      "title": "Sabzi From Mandi",
+      "category": "Sabzi",
+      "amount": 1510,
+      "description": "",
+      "date": "2026-01-06",
+      "subItems": [
+        {
+          "name": "Aloo 10kg",
+          "amount": 260
+        },
+        {
+          "name": "Onion 5kg",
+          "amount": 250
+        },
+        {
+          "name": "Thom+Dhana+mint",
+          "amount": 100
+        },
+        {
+          "name": "Thom+Adrak",
+          "amount": 100
+        },
+        {
+          "name": "Mirch",
+          "amount": 50
+        },
+        {
+          "name": "Lotus Root (Beeh) 8kg",
+          "amount": 500
+        },
+        {
+          "name": "Allah Wadhayo",
+          "amount": 100
+        },
+        {
+          "name": "Petrol",
+          "amount": 150
+        }
+      ],
+      "id": "9da861f9-79cd-4d95-8605-9d68045bf755"
+    },
+    {
+      "title": "Rice, Oil etc mixed",
+      "category": "Ration",
+      "amount": 3800,
+      "description": "",
+      "date": "2026-01-01",
+      "subItems": [],
+      "id": "95f46b8b-e961-4f1d-a34a-39c75b64c46b"
+    },
+    {
+      "title": "Plumber (For Hot, Fresh water Supply)",
+      "category": "Maintenance",
+      "amount": 4200,
+      "description": "",
+      "date": "2026-01-02",
+      "subItems": [],
+      "id": "57c35e3e-099c-43d6-92b5-70aaee55f5ce"
+    },
+    {
+      "title": "Chicken Advance",
+      "category": "Advance",
+      "amount": 10000,
+      "description": "",
+      "date": "2026-01-02",
+      "subItems": [],
+      "id": "fdb86764-afd2-46ef-b506-9dacfac32b16"
+    },
+    {
+      "title": "Milk Advance",
+      "category": "Advance",
+      "amount": 10000,
+      "description": "",
+      "date": "2026-01-02",
+      "subItems": [],
+      "id": "4199cfd4-47a0-41d1-a988-be5d4144db6a"
+    },
+    {
+      "title": "Cook Molvi Salary",
+      "category": "Salaries",
+      "amount": 21000,
+      "description": "",
+      "date": "2026-01-02",
+      "subItems": [],
+      "id": "d61d56b2-1c80-478a-94c8-1c95a444a56a"
+    },
+    {
+      "title": "Sweeper Salary + 1k for Old Hostel",
+      "category": "Salaries",
+      "amount": 14000,
+      "description": "",
+      "date": "2026-01-02",
+      "subItems": [],
+      "id": "b5606324-275d-42d3-b11e-1bf545827b7d"
+    },
+    {
+      "title": "Sabzi From Mandi",
+      "category": "Sabzi",
+      "amount": 1490,
+      "description": "",
+      "date": "2026-01-03",
+      "subItems": [
+        {
+          "name": "Aallo",
+          "amount": 270
+        },
+        {
+          "name": "Onion",
+          "amount": 250
+        },
+        {
+          "name": "Tomato",
+          "amount": 450
+        },
+        {
+          "name": "Thom/Adrak",
+          "amount": 200
+        },
+        {
+          "name": "Thom/Dhana",
+          "amount": 70
+        },
+        {
+          "name": "Mirch",
+          "amount": 50
+        },
+        {
+          "name": "Petrol ",
+          "amount": 150
+        },
+        {
+          "name": "Ustad Orange",
+          "amount": 50
+        }
+      ],
+      "id": "65f393b3-b14d-4452-8cc8-f04226311e1a"
     }
   ],
-  "payments": [
-    {
-      "studentId": "1",
-      "amount": 7999,
-      "receiver": "Fahim",
-      "date": "2026-01-06",
-      "id": "c98811ce-84aa-4b81-b6ac-f861284e5535"
-    }
-  ]
+  "payments": []
 }
