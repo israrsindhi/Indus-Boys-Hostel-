@@ -1,0 +1,41 @@
+{
+  "students": [
+    {
+      "id": "1",
+      "name": "Ahmed Khan",
+      "roomNumber": "101",
+      "totalFees": 5000
+    },
+    {
+      "id": "2",
+      "name": "Zaid Ali",
+      "roomNumber": "102",
+      "totalFees": 5000
+    },
+    {
+      "id": "3",
+      "name": "Omar Farooq",
+      "roomNumber": "103",
+      "totalFees": 5000
+    }
+  ],
+  "expenses": [
+    {
+      "title": "7",
+      "category": "Breakfast",
+      "amount": 77,
+      "description": "",
+      "date": "2026-01-06",
+      "id": "62ce14bc-7029-42cd-8d84-b10671926d46"
+    }
+  ],
+  "payments": [
+    {
+      "studentId": "1",
+      "amount": 7999,
+      "receiver": "Fahim",
+      "date": "2026-01-06",
+      "id": "c98811ce-84aa-4b81-b6ac-f861284e5535"
+    }
+  ]
+}
