@@ -1415,6 +1415,96 @@
                 });
             });
         }
+         // Navigation click handlers
+            navItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const sectionId = item.dataset.section;
+                    currentState.currentSection = sectionId;
+                    switchSection(sectionId);
+                });
+            });
+            
+            // Refresh button
+            refreshBtn.addEventListener('click', refreshData);
+            
+            // Calendar navigation
+            prevMonthBtn.addEventListener('click', () => {
+                if (currentState.currentMonth === 0) {
+                    currentState.currentMonth = 11;
+                    currentState.currentYear--;
+                } else {
+                    currentState.currentMonth--;
+                }
+                renderCalendar();
+            });
+            
+            nextMonthBtn.addEventListener('click', () => {
+                if (currentState.currentMonth === 11) {
+                    currentState.currentMonth = 0;
+                    currentState.currentYear++;
+                } else {
+                    currentState.currentMonth++;
+                }
+                renderCalendar();
+            });
+            
+            todayBtn.addEventListener('click', () => {
+                const today = new Date();
+                currentState.currentMonth = today.getMonth();
+                currentState.currentYear = today.getFullYear();
+                renderCalendar();
+            });
+            
+            // Settings toggles
+            darkModeToggle.addEventListener('click', function() {
+                this.classList.toggle('active');
+            });
+            
+            notificationsToggle.addEventListener('click', function() {
+                this.classList.toggle('active');
+            });
+            
+            chartsToggle.addEventListener('click', function() {
+                this.classList.toggle('active');
+            });
+            
+            // Export data button
+            exportDataBtn.addEventListener('click', () => {
+                const dataStr = JSON.stringify(appData, null, 2);
+                const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
+                
+                const exportFileDefaultName = 'expense-data.json';
+                
+                const linkElement = document.createElement('a');
+                linkElement.setAttribute('href', dataUri);
+                linkElement.setAttribute('download', exportFileDefaultName);
+                linkElement.click();
+            });
+            
+            // Clear cache button
+            clearCacheBtn.addEventListener('click', () => {
+                if (confirm('Clear all cached data?')) {
+                    localStorage.clear();
+                    location.reload();
+                }
+            });
+            
+            // Modal close handlers
+            document.querySelector('.close-modal').addEventListener('click', closeModal);
+            
+            dateModal.addEventListener('click', (e) => {
+                if (e.target === dateModal) {
+                    closeModal();
+                }
+            });
+            
+            // Escape key to close modal
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && dateModal.classList.contains('active')) {
+                    closeModal();
+                }
+            });
+        }
 
         // Make toggleSubItems function available globally for inline onclick
         window.toggleSubItems = toggleSubItems;
